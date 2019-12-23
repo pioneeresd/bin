@@ -7,9 +7,14 @@ def move_file(file, regex, target_dir, prefix)
   match = regex.match(file)
   puts match if defined?($DEBUG)
   target_dir = "#{target_dir}/Season_#{match[1]}"
+  puts "Making dir #{target_dir}" if defined? $DEBUG
   `mkdir -p #{target_dir}`
   target = "#{target_dir}/#{prefix}_S#{match[1]}E#{match[2]}.mkv"
-  `mv -v #{file} #{target}`
+  if defined? $DEBUG
+    puts "Will move #{file} to #{target}"
+  else
+    `mv -v #{file} #{target}`
+  end
 end
 
 def move(regex, target_dir, prefix, *files)
@@ -26,9 +31,10 @@ if ARGV.length < 3
   puts "Usage: #{$PROGRAM_NAME} pattern destination prefix files "
 else
   ARGV[0] = eval(ARGV[0])
-  if defined?($DEBUG) then ARGV.each do |arg|
-    puts "#{arg.class}: #{arg}"
-  end
+  if defined?($DEBUG)
+    ARGV.each do |arg|
+      puts "#{arg.class}: #{arg}"
+    end
   end
   move(*ARGV)
 end
