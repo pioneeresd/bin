@@ -1,9 +1,13 @@
 #!/bin/bash
 
-xidlehook \
-  --timer 60 \
-  'dimall' \
-  'undimall' \
-  --timer 10 \
-  'undimall; blacklock' \
-  '' &
+# xidlehook \
+#   --timer 60 \
+#   'dimall' \
+#   'undimall' \
+#   --timer 10 \
+#   'undimall; blacklock' \
+#   '' &
+xautolock \
+  -time 1 \
+  -locker "blacklock" \
+  -corners ---- &
