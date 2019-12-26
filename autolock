@@ -7,7 +7,10 @@
 #   --timer 10 \
 #   'undimall; blacklock' \
 #   '' &
-xautolock \
-  -time 1 \
+xautolock -detectsleep\
+  -time 3 \
   -locker "blacklock" \
+  -notify 30 \
+  -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30
+  seconds'" \
   -corners ---- &
