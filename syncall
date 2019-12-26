@@ -6,22 +6,22 @@ function traverse() {
     if [ -d "${dir}" ] ; then
       echo "updating $dir"
       cd "$dir"
-      gpull
+      gsync
     fi
   done
 }
 
 cd ~
 echo "restoring ~"
-gpull
+gsync
 
 cd ~/.config
 echo "restoring ~/.config"
-gpull
+gsync
 
 cd ~/.local/bin
 echo "restoring ~/.local/bin"
-gpull
+gsync
 
 echo "restoring Github repos"
 traverse ~/Documents/github
