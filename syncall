@@ -12,19 +12,19 @@ function traverse() {
 }
 
 cd ~
-echo "restoring ~"
+echo "syncing ~"
 gsync
 
 cd ~/.config
-echo "restoring ~/.config"
+echo "syncing ~/.config"
 gsync
 
 cd ~/.local/bin
-echo "restoring ~/.local/bin"
+echo "syncing ~/.local/bin"
 gsync
 
-echo "restoring Github repos"
+echo "syncing Github repos"
 traverse ~/Documents/github
 
-echo "restoring Bitbucket repos"
+echo "syncing Bitbucket repos"
 traverse ~/Documents/bitbucket
