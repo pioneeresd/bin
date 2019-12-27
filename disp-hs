@@ -3,3 +3,5 @@
 xrandr --output VGA-0 --off --output DVI-0 --primary --auto
 variety -n
 variety -p
+killall conky
+conky
