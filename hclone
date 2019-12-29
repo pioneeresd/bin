@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ~/Documents/heroku
-heroku git:clone -a $argv
+heroku git:clone -a $1
