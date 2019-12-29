@@ -4,8 +4,10 @@ cd ~/Documents/heroku
 rails _6.0.1_ new $1
 cd $1
 git init
-git add -a
+bundle config set without 'production'
+git add -A
 git commit
 heroku create
 heroku rename $1
 heroku git:remote -a $1
+git push -u heroku master
