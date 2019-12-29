@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd ~/Documents/heroku
+rails new $argv
+cd $argv
+git init
+git add -a
+git commit
+heroku create
+heroku rename $argv
+heroku git:remote -a $argv
