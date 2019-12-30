@@ -11,6 +11,10 @@ function traverse() {
   done
 }
 
+cd ~/.rbenv
+echo "updating .rbenv"
+git pull
+
 cd ~
 echo "syncing ~"
 gsync
@@ -28,3 +32,6 @@ traverse ~/Documents/github
 
 echo "syncing Bitbucket repos"
 traverse ~/Documents/bitbucket
+
+echo "syncing heroku repos"
+traverse ~/Documents/heroku
